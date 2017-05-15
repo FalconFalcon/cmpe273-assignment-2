@@ -14,6 +14,7 @@ def lambda_handler(event, context):
     data = event.get('data')
 
     if httpMethod == "POST":
+        print("In POST...")
         menuDB.put_item(
             Item={
                 "menu_id": data["menu_id"],
@@ -28,3 +29,12 @@ def lambda_handler(event, context):
         return {
             "status": 200
         }
+    elif httpMethod == "GET":
+        print("In GET...")
+        menu_id = event.get("param").get("menu_id")
+        response = menuDB.get_item(
+            Key={
+                'menu_id': menu_id
+            }
+        )
+        return response['Item']
