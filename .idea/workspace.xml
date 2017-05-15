@@ -23,8 +23,8 @@
       <file leaf-file-name="service.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assignment2/hello-function/service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+            <state relative-caret-position="427">
+              <caret line="60" column="27" lean-forward="true" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -428,8 +428,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/assignment2/hello-function/service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+        <state relative-caret-position="427">
+          <caret line="60" column="27" lean-forward="true" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
           <folding />
         </state>
       </provider>

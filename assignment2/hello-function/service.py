@@ -14,7 +14,6 @@ def lambda_handler(event, context):
     data = event.get('data')
 
     if httpMethod == "POST":
-        print("In POST...")
         menuDB.put_item(
             Item={
                 "menu_id": data["menu_id"],
@@ -30,7 +29,6 @@ def lambda_handler(event, context):
             "status": 200
         }
     elif httpMethod == "GET":
-        print("In GET...")
         menu_id = event.get("param").get("menu_id")
         response = menuDB.get_item(
             Key={
@@ -38,3 +36,33 @@ def lambda_handler(event, context):
             }
         )
         return response['Item']
+
+    elif httpMethod == "PUT":
+        menu_id = event.get("param").get("menu_id")
+        selection = event.get("data").get("selection")
+        menuDB.update_item(
+            Key={
+                'menu_id': menu_id,
+            },
+            UpdateExpression='SET selection = :val',
+            ExpressionAttributeValues={
+                ':val': selection
+            }
+        )
+        return {
+            "status": 200,
+            "response": {
+                "menu_id": menu_id,
+                "selection": selection
+            }
+        }
+    elif httpMethod == "DELETE":
+        menu_id = event.get("param").get("menu_id")
+        menuDB.delete_item(
+            Key={
+                'menu_id': menu_id
+            }
+        )
+        return {
+            "status": 200
+        }
